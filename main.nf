@@ -1,6 +1,5 @@
-#!/usr/bin/env Rscript
-params.function_rds = './function.rds'
-params.input_rds = './input.rds'
+params.function_rds = Channel.fromPath('./input/function.rds')
+params.input_rds = Channel.fromPath('./input/input.rds')
 
 
 process my_script {
