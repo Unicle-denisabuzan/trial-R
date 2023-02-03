@@ -1,5 +1,5 @@
-params.function_rds = Channel.fromPath('./function.rds')
-params.input_rds = Channel.fromPath('./input.rds')
+params.function_rds = './function.rds'
+params.input_rds = './input.rds'
 
 
 process my_script {
