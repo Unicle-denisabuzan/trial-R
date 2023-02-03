@@ -15,5 +15,5 @@ process my_script {
 workflow {
         script_r=file(params.script_R)
         my_script(script_r)
-        my_script.out.view()
+        my_script.view()
 }
