@@ -1,5 +1,5 @@
-params.function_rds = Channel.fromPath('./input/function.rds')
-params.input_rds = Channel.fromPath('./input/input.rds')
+params.function_rds = Channel.fromPath('./function.rds')
+params.input_rds = Channel.fromPath('./input.rds')
 
 
 process my_script {
@@ -22,5 +22,5 @@ workflow {
     input_rds = file( params.input_rds )
 
     my_script( function_rds, input_rds )
-    my_script.out.view()
+    
 }
