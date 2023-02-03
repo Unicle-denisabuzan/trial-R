@@ -4,7 +4,7 @@ nextflow.enable.dsl=2
 process INDEX {
 
     """
-    Rscript input/script.R
+    Rscript script.R
     """
 }
 
