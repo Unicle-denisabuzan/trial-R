@@ -4,7 +4,7 @@ file_name=script.R
 process INDEX {
 
     """
-    Rscript ${file_name}
+    Rscript input/${file_name}
     """
 }
 
