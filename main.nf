@@ -1,15 +1,13 @@
-#!/usr/bin/env nextflow
+#!/usr/bin/env Rscript
 nextflow.enable.dsl=2 
 
-process INDEX {
-
+process my_script {
     """
-    Rscript script.R
+    script.R
     """
 }
 
 
 workflow {
-  //process is called like a function in the workflow block
-  INDEX()
+        my_script.out.view()
 }
