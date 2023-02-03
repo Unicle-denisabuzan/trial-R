@@ -1,13 +1,19 @@
 #!/usr/bin/env Rscript
 nextflow.enable.dsl=2 
+params.script_R='./bin/script.R'
 
 process my_script {
+    input: 
+    path script_r
+
     """
-    Rscript script.R
+   "${script_r}"
     """
 }
 
 
 workflow {
-        my_script()
+        script_r=file(params.script_R)
+        my_script(script_r)
+        my_script.out.view()
 }
