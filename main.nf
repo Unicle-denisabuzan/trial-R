@@ -12,7 +12,14 @@ process my_script {
     path "output.rds"
 
     """
-    script.R "${my_function_rds}" "${my_input_rds}" output.rds
+    #!/usr/bin/env Rscript
+
+    FUN <- readRDS("${my_function_rds}");
+    input = readRDS("${my_input_rds}");
+    output = FUN(
+      singleCell_data_input=input[[1]], savePath=input[[2]], tmpDirGC=input[[3]]
+    );
+    saveRDS(output, "output.rds")
     """
 }
 
@@ -22,5 +29,6 @@ workflow {
     input_rds = file( params.input_rds )
 
     my_script( function_rds, input_rds )
-    
+    my_script.out.view()
 }
+
