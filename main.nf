@@ -3,7 +3,7 @@ nextflow.enable.dsl=2
 
 process my_script {
     """
-    script.R
+    ./input/script.R
     """
 }
 
