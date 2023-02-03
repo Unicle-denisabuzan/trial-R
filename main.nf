@@ -7,7 +7,7 @@ process my_script {
     path script_r
 
     """
-   "${script_r}"
+   "Rscript ${script_r}"
     """
 }
 
