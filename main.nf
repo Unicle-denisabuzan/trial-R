@@ -9,5 +9,5 @@ process my_script {
 
 
 workflow {
-        my_script.out.view()
+        my_script()
 }
