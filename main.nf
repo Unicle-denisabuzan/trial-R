@@ -8,10 +8,10 @@ process sayHello {
     stdout
   script:
     """
-    echo '$x world!'
+    sleep 10; echo '$x Unicle 2023!'; 
     """
 }
 
 workflow {
-  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+  Channel.of('Hello') | sayHello | view
 }
