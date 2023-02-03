@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 nextflow.enable.dsl=2 
-params.script_R='./bin/script.R'
+params.script_R='./script.R'
 
 process my_script {
     input: 
