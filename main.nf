@@ -1,10 +1,10 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2 
-
+file_name=script.R
 process INDEX {
 
     """
-    Rscript ${script.R}
+    Rscript ${file_name}
     """
 }
 
