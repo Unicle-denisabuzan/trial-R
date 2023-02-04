@@ -1,3 +1,6 @@
+params.function_rds = './input/function.rds'
+params.input_rds = './input/input.rds'
+params.script_r='./input/script.R'
 
 process my_script {
 
@@ -16,6 +19,10 @@ process my_script {
 
 workflow {
 
+    function_rds = file( params.function_rds )
+    input_rds = file( params.input_rds )
+    script_r = file(params.script_r)
 
+    my_script( function_rds, input_rds, script_r )
     my_script.out.view()
 }
