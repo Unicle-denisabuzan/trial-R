@@ -13,7 +13,7 @@ process my_script {
     path "output.rds"
 
     """
-    "${my_script_r}" "${my_function_rds}" "${my_input_rds}" output.rds
+    Rscript  "${my_script_r}" "${my_function_rds}" "${my_input_rds}" output.rds
     """
 }
 
