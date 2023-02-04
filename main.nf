@@ -1,15 +1,26 @@
-#!/usr/bin/env Rscript
-nextflow.enable.dsl=2 
+params.function_rds = './input/function.rds'
+params.input_rds = './input/input.rds'
+
 
 process my_script {
-script:
+
+    input:
+    path my_function_rds
+    path my_input_rds
+
+    output:
+    path "output.rds"
+
     """
-     script.R
+    script.R "${my_function_rds}" "${my_input_rds}" output.rds
     """
 }
-
 
 workflow {
-        my_script()
-}
 
+    function_rds = file( params.function_rds )
+    input_rds = file( params.input_rds )
+
+    my_script( function_rds, input_rds )
+    my_script.out.view()
+}
