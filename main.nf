@@ -1,5 +1,5 @@
-params.function_rds = './input/function.rds'
-params.input_rds = './input/input.rds'
+params.function_rds = './input/function_1.rds'
+params.input_rds = './input/input_1.rds'
 params.script_r='./input/script.R'
 
 process my_script {
