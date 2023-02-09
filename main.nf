@@ -1,4 +1,4 @@
-params.function_rds = './input/function_1.rds'
+params.function_rds = './input/function_working.rds'
 params.input_rds = './input/input_1.rds'
 params.script_r='./input/script.R'
 
